@@ -7,6 +7,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from './reducers';
 import App from './components/App';
+import Header from './components/Home/Header';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
 
@@ -17,7 +18,10 @@ const rootElement = document.getElementById('root');
 const app = (
   <Provider store={store}>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Route component={App} />
+      <React.Fragment>
+        <Header />
+        <Route component={App} />
+      </React.Fragment>
     </BrowserRouter>
   </Provider>
 );

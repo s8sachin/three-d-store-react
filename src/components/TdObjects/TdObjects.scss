@@ -1,0 +1,14 @@
+// .modelsListRow {
+//   overflow-x: auto;
+// }
+// :global {
+  .slick-prev, .slick-next {
+    font-size: 20px !important;
+    color: black !important;
+  }
+
+   .slick-prev:before, .slick-next:before  {
+    content: '' !important;
+  }
+
+  // }
