@@ -1,0 +1,13 @@
+node_modules
+build
+src/registerServiceWorker.js
+/build/**
+/coverage/**
+/docs/**
+/jsdoc/**
+/templates/**
+/tmp/**
+test.js
+/config
+/scripts
+!.eslintrc.js
