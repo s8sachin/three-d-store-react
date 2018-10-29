@@ -1,14 +1,31 @@
-// .modelsListRow {
-//   overflow-x: auto;
+.slick-prev:before,
+.slick-next:before {
+  content: '' !important;
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 15px !important;
+}
+
+.arrows {
+  color: black;
+  font-size: 15px;
+}
+
 // }
-// :global {
-  .slick-prev, .slick-next {
-    font-size: 20px !important;
-    color: black !important;
-  }
+.carousel .slide {
+  background: white !important;
+}
 
-   .slick-prev:before, .slick-next:before  {
-    content: '' !important;
-  }
+.modelImg {
+  width: 100%;
+  max-width: 97%;
+  border-radius: 10px;
+}
 
-  // }
+@media (min-width: 376px) and (max-width: 425px) {
+  .modelImg {
+    // max-width: 190px;
+  }
+}

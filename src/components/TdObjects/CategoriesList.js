@@ -9,15 +9,8 @@ class CategoriesList extends Component {
       <React.Fragment>
         {categories && categories.map(category => (
           <React.Fragment key={category._id}>
-            <Row>
-              {category.name}
-              <Container>
-                {/* <Row className="modelsListRow"> */}
-                {/* <Row className="flex-nowrap overflow-x-auto modelsListRow"> */}
-                <TdModelsList models={category.models} />
-                {/* </Row> */}
-              </Container><br />
-            </Row>
+            {category.name}
+            <TdModelsList models={category.models} /><br />
           </React.Fragment>
         ))}
       </React.Fragment>

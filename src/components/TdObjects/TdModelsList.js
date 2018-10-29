@@ -1,58 +1,82 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
+import {
+  Row, Col, Card, CardImg,
+} from 'reactstrap';
 import Slider from 'react-slick';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
-const LeftNavButton = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      // style={{ ...style, display: 'block', background: 'red' }}
-      onClick={onClick}
-      role="presentation"
-    >
-      <i className="fas fa-angle-left" />
-    </div>
-  );
-};
-
-const RightNavButton = (props) => {
-  const { className, style, onClick } = props;
+const Arrow = (props) => {
+  const { className, onClick, direction } = props;
   return (
     <div
       className={className}
       onClick={onClick}
       role="presentation"
     >
-      <i className="fas fa-angle-right" />
+      <i className={`fas fa-angle-${direction} arrows`} />
     </div>
   );
 };
 
-const sliderSettings = {
+const settings = {
+  dots: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  centerMode: true,
-  nextArrow: <RightNavButton />,
-  prevArrow: <LeftNavButton />,
+  slidesToShow: 5,
+  slidesToScroll: 5,
+  nextArrow: <Arrow direction="right" />,
+  prevArrow: <Arrow direction="left" />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: false,
+      },
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 375,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false,
+      },
+    },
+  ],
 };
-
 class TdModelsList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     const { models } = this.props;
+    const { sliderSettings } = this.state;
     return (
       <React.Fragment>
-        <Slider {...sliderSettings}>
-          {models && models.map(model => (
-            <React.Fragment key={model._id}>
-              <div>
-                <img alt={model.name} src={model.thumb} style={{ maxWidth: 300, maxHeight: 300 }} className="img-responsive" title={model.name} />
+        {models && (
+          <Slider {...settings}>
+            {models.map(model => (
+              <div key={model._id}>
+                <img alt={model.name} src={model.thumb} className="img-responsive modelImg" title={model.name} />
               </div>
-            </React.Fragment>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        )}
       </React.Fragment>
     );
   }
