@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Row, Col, Card, CardImg,
+  Row, Col, Card, CardImg, Popover, PopoverHeader, PopoverBody,
 } from 'reactstrap';
 import Slider from 'react-slick';
 
@@ -61,18 +61,36 @@ class TdModelsList extends Component {
     this.state = {};
   }
 
+  mouseOver(id) {
+    this.setState({ selectedImg: id });
+  }
+
+  mouseOut() {
+    this.setState({ selectedImg: false });
+  }
+
   render() {
     const { models } = this.props;
-    const { sliderSettings } = this.state;
+    const { sliderSettings, selectedImg } = this.state;
     return (
       <React.Fragment>
         {models && (
           <Slider {...settings}>
             {models.map(model => (
-              <div key={model._id}>
-                <img alt={model.name} src={model.thumb} className="img-responsive modelImg ml-auto mr-auto" title={model.name} />
+              <div key={model._id} className="model-holder cursor-pointer" onMouseOver={() => this.mouseOver(model._id)} onMouseOut={() => this.mouseOut(model._id)}>
+                <div className="model-h">
+                  <img id={`img-${model._id}`} alt={model.name} src={model.thumb} className="img-responsive modelImg ml-auto mr-auto" title={model.name} />
+                  <span className="name">{model.name}</span>
+                </div>
               </div>
             ))}
+            {/* {selectedImg && (
+              <Popover placement="bottom" isOpen target={selectedImg}>
+                {console.log(selectedImg)}
+                <PopoverHeader>Popover Title</PopoverHeader>
+                <PopoverBody>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</PopoverBody>
+              </Popover>
+            )} */}
           </Slider>
         )}
       </React.Fragment>

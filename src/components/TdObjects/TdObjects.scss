@@ -19,9 +19,30 @@
 }
 
 .modelImg {
-  width: 100%;
   max-width: 85%;
   border-radius: 10px;
+  transition: transform .2s;
+}
+
+// .modelImg:hover {
+//   transform: scaleX(1.05);
+// }
+
+.name {
+  display: none;
+}
+
+.model-holder {
+  min-height: 140px;
+}
+
+.model-holder:hover {
+  .name{
+    display: block;
+  }
+  .modelImg{
+    display: none;
+  }
 }
 
 @media (min-width: 376px) and (max-width: 425px) {
