@@ -3,8 +3,6 @@ import {
   Row, Col, Card, CardImg,
 } from 'reactstrap';
 import Slider from 'react-slick';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
 
 const Arrow = (props) => {
   const { className, onClick, direction } = props;
@@ -72,7 +70,7 @@ class TdModelsList extends Component {
           <Slider {...settings}>
             {models.map(model => (
               <div key={model._id}>
-                <img alt={model.name} src={model.thumb} className="img-responsive modelImg" title={model.name} />
+                <img alt={model.name} src={model.thumb} className="img-responsive modelImg ml-auto mr-auto" title={model.name} />
               </div>
             ))}
           </Slider>
