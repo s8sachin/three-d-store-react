@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container } from 'reactstrap';
+import { Container, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { getTdObjectsAction } from '../../actions';
 import CategoriesList from './CategoriesList';
 import './TdObjects.scss';
+import TCanvas from '../TCanvas/TCanvas';
 
 class TdObjects extends Component {
   componentDidMount() {
@@ -13,9 +14,17 @@ class TdObjects extends Component {
   render() {
     const { tdObjects } = this.props;
     return (
-      <Container>
-        {tdObjects && <CategoriesList categories={tdObjects.categories} />}
-      </Container>
+      <React.Fragment>
+        {/* <div>
+          <Breadcrumb>
+            <BreadcrumbItem active>Home</BreadcrumbItem>
+          </Breadcrumb>
+        </div> */}
+        {/* <TCanvas /> */}
+        <Container>
+          {tdObjects && <CategoriesList categories={tdObjects.categories} />}
+        </Container>
+      </React.Fragment>
     );
   }
 }
