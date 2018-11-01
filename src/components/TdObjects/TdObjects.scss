@@ -10,7 +10,7 @@
 
 .arrows {
   color: black;
-  font-size: 15px;
+  font-size: 30px;
 }
 
 // }
@@ -18,15 +18,19 @@
   background: white !important;
 }
 
-.modelImg {
+.model-h {
   max-width: 85%;
-  border-radius: 10px;
-  transition: transform .2s;
+
+  :hover {
+    // box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
 }
 
-// .modelImg:hover {
-//   transform: scaleX(1.05);
-// }
+.modelImg {
+  border-radius: 10px;
+  max-width: inherit;
+}
 
 .name {
   display: none;
@@ -36,14 +40,13 @@
   min-height: 140px;
 }
 
-// .model-holder:hover {
-//   .name{
-//     display: block;
-//   }
-//   .modelImg{
-//     display: none;
-//   }
-// }
+.category-row {
+  padding-top: 20px;
+}
+
+.category-name {
+  font-size: 25px;
+}
 
 @media (min-width: 376px) and (max-width: 425px) {
   .modelImg {

@@ -1,7 +1,7 @@
 import { TD_OBJECTS } from '../actions/types';
 
 const INITIAL_STATE = {
-  tdObjects: null,
+  tdObjects: {},
 };
 
 export default (state = INITIAL_STATE, action) => {

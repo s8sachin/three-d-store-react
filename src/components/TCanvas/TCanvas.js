@@ -121,7 +121,7 @@ class TCanvas extends Component {
           Loading ...
         </div>
         <div
-          style={{ width: '400px', height: '400px' }}
+          style={{ width: '100%', height: '400px' }}
           ref={(mount) => { this.mount = mount; }}
         />
       </React.Fragment>

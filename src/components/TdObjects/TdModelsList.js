@@ -94,12 +94,15 @@ class TdModelsList extends Component {
             {models.map(model => (
               <div
                 key={model._id}
-                className="model-holder cursor-pointer"
+                className="model-holder cursor-pointer d-flex h-100"
                 onMouseOver={() => this.mouseOver(model._id)}
                 onMouseOut={() => this.mouseOut(model._id)}
+                onFocus={() => this.mouseOver(model._id)}
+                onBlur={() => this.mouseOut(model._id)}
                 onClick={() => this.toggle(model)}
+                role="presentation"
               >
-                <div className="model-h">
+                <div className="model-h ml-auto mr-auto  justify-content-center align-self-center">
                   <img id={`img-${model._id}`} alt={model.name} src={model.thumb} className="img-responsive modelImg ml-auto mr-auto" title={model.name} />
                   {/* <span className="name">{model.name}</span> */}
                 </div>
@@ -115,7 +118,7 @@ class TdModelsList extends Component {
           </Slider>
         )}
         <Modal isOpen={modal} toggle={() => this.toggle()}>
-          <ModalHeader toggle={() => this.toggle()}>Modal title</ModalHeader>
+          <ModalHeader toggle={() => this.toggle()}>{selectedModel && selectedModel.name}</ModalHeader>
           <ModalBody>
             <TCanvas selectedModel={selectedModel} />
           </ModalBody>

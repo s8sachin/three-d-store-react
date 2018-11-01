@@ -10,6 +10,7 @@ import App from './components/App';
 import Header from './components/Home/Header';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
+import Footer from './components/Home/Footer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, {}, composeEnhancers(applyMiddleware(ReduxThunk)));
@@ -21,6 +22,7 @@ const app = (
       <React.Fragment>
         <Header />
         <Route component={App} />
+        <Footer />
       </React.Fragment>
     </BrowserRouter>
   </Provider>
