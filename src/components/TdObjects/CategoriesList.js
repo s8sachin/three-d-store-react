@@ -31,9 +31,10 @@ class CategoriesList extends Component {
     return (
       <WayPoint
         onEnter={() => this.loadMoreItems()}
-        threshold={3.0}
-        topOffset="30%"
-        // bottomOffset="-200px"
+        // threshold={100}
+        topOffset="20%"
+        // bottomOffset="-60%"
+        fireOnRapidScroll
       >
         {/* <center><span>Loading ...</span></center> */}
       </WayPoint>
