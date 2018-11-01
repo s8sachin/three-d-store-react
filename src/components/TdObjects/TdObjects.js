@@ -20,7 +20,6 @@ class TdObjects extends Component {
             <BreadcrumbItem active>Home</BreadcrumbItem>
           </Breadcrumb>
         </div> */}
-        {/* <TCanvas /> */}
         <Container>
           {tdObjects && <CategoriesList categories={tdObjects.categories} />}
         </Container>

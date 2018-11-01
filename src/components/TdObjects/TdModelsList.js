@@ -24,6 +24,7 @@ const settings = {
   speed: 500,
   slidesToShow: 5,
   slidesToScroll: 5,
+  lazyLoad: true,
   nextArrow: <Arrow direction="right" />,
   prevArrow: <Arrow direction="left" />,
   responsive: [
@@ -61,13 +62,15 @@ class TdModelsList extends Component {
     super(props);
     this.state = {
       modal: false,
+      selectedModel: false,
     };
-    this.toggle = this.toggle.bind(this);
+    // this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
+  toggle(selectedModel) {
     this.setState({
       modal: !this.state.modal,
+      selectedModel,
     });
   }
 
@@ -81,7 +84,9 @@ class TdModelsList extends Component {
 
   render() {
     const { models } = this.props;
-    const { sliderSettings, selectedImg } = this.state;
+    const {
+      sliderSettings, selectedImg, selectedModel, modal,
+    } = this.state;
     return (
       <React.Fragment>
         {models && (
@@ -92,7 +97,7 @@ class TdModelsList extends Component {
                 className="model-holder cursor-pointer"
                 onMouseOver={() => this.mouseOver(model._id)}
                 onMouseOut={() => this.mouseOut(model._id)}
-                onClick={this.toggle}
+                onClick={() => this.toggle(model)}
               >
                 <div className="model-h">
                   <img id={`img-${model._id}`} alt={model.name} src={model.thumb} className="img-responsive modelImg ml-auto mr-auto" title={model.name} />
@@ -109,13 +114,13 @@ class TdModelsList extends Component {
             )} */}
           </Slider>
         )}
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+        <Modal isOpen={modal} toggle={() => this.toggle()}>
+          <ModalHeader toggle={() => this.toggle()}>Modal title</ModalHeader>
           <ModalBody>
-            <TCanvas />
+            <TCanvas selectedModel={selectedModel} />
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>Close</Button>
+            <Button color="secondary" onClick={() => this.toggle()}>Close</Button>
           </ModalFooter>
         </Modal>
       </React.Fragment>
