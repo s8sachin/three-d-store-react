@@ -8,7 +8,7 @@ import { getTdObjectsAction } from '../../actions';
 class CategoriesList extends Component {
   constructor(props) {
     super(props);
-    this.state = { skip: 0, limit: 3, categories: null };
+    this.state = { skip: 0, limit: 2 };
   }
 
   componentDidMount() {
@@ -32,8 +32,8 @@ class CategoriesList extends Component {
       <WayPoint
         onEnter={() => this.loadMoreItems()}
         threshold={3.0}
-        topOffset="500px"
-        bottomOffset="-400px"
+        topOffset="30%"
+        // bottomOffset="-200px"
       >
         {/* <center><span>Loading ...</span></center> */}
       </WayPoint>
@@ -42,7 +42,6 @@ class CategoriesList extends Component {
 
   render() {
     const { tdObjects } = this.props;
-    console.log(tdObjects)
     return (
       <React.Fragment>
         {tdObjects.categories && tdObjects.categories.map(category => (

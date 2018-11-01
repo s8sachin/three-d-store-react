@@ -5,7 +5,8 @@ import './Home.scss';
 class Home extends Component {
   render() {
     return (
-      <div style={{ minHeight: '80vh' }}>
+      <div >
+      {/* <div style={{ minHeight: '80vh' }}> */}
         <TdObjects />
       </div>
     );
