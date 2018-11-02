@@ -9,7 +9,7 @@ import {
 import { connect } from 'react-redux';
 import scapicLogo from './scapic.png';
 import { logoutAction } from '../../actions/user';
-
+const url = process.env.PUBLIC_URL;
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -35,6 +35,7 @@ class Header extends React.Component {
 
   logout() {
     this.props.logoutAction();
+    console.log(url);
     this.props.history.push('/');
   }
 
