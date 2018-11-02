@@ -5,6 +5,21 @@
 .social_links {
   font-size: 20px;
   margin-right: 20px;
+  color: #ea4446;
+
+  :hover {
+    color: #ea4446;
+  }
+}
+
+.developedBy {
+  color: #ea4446;
+  text-decoration: none;
+}
+
+.developedBy:hover {
+  color: #ea4446 !important;
+  text-decoration: none;
 }
 
 .app-footer {
@@ -79,7 +94,8 @@
     margin-top: 5px;
     margin-bottom: 5px;
   }
-  .userBtn{
+
+  .userBtn {
     margin-right: 0px;
   }
 }

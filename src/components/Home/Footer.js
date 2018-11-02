@@ -24,7 +24,7 @@ class Footer extends Component {
             </a>
           </Col>
           <Col xs={12} sm={4} md={4} lg={4} className="d-flex align-items-center justify-content-center">
-            <span className="">Developed by <a href="https://github.com/s8sachin">Sachin</a></span>
+            <span className="">Developed by <a href="https://github.com/s8sachin" className="developedBy">Sachin</a></span>
           </Col>
         </Row>
       </Container>
