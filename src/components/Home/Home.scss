@@ -119,10 +119,20 @@
   color: white;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fullscreen-bg__video {
+    width: 180%;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
   .collapsable-navItems {
     margin-top: 5px;
     margin-bottom: 5px;
+  }
+
+  .fullscreen-bg__video {
+    width: 250%;
   }
 
   .userBtn {
