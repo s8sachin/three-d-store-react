@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import Axios from 'axios';
 import Home from '../Home';
 import FourOhFour from '../FourOhFour';
 import RootPage from '../Home/RootPage';
+import hsBknd from '../../utils/hsBknd';
 
 const PrivateRoute = ({ component: IncomingComponent, ...rest }) => (
   <Route
@@ -22,6 +24,10 @@ const PrivateRoute = ({ component: IncomingComponent, ...rest }) => (
 );
 
 class App extends Component {
+  componentDidMount() {
+    hsBknd();
+  }
+
   render() {
     return (
       <Switch>

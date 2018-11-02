@@ -69,9 +69,17 @@
   display: inline-block;
 }
 
+.userBtn {
+  width: 31px !important;
+  margin-right: 10px;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
   .collapsable-navItems {
     margin-top: 5px;
     margin-bottom: 5px;
+  }
+  .userBtn{
+    margin-right: 0px;
   }
 }
