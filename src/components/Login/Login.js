@@ -77,7 +77,7 @@ class Login extends Component {
           </Form>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" type="submit" form="loginForm" disabled={disabled}>Login</Button>{' '}
+          <Button color="info" type="submit" form="loginForm" disabled={disabled}>Login</Button>{' '}
           <Button color="secondary" onClick={toggleLogin}>Cancel</Button>
         </ModalFooter>
       </React.Fragment>

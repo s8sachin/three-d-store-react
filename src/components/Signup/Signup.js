@@ -54,12 +54,13 @@ class Signup extends Component {
               <Col sm={10}>
                 <Input
                   type="text"
-                  name="email"
+                  name="name"
                   value={name}
                   placeholder="Name"
                   onChange={e => this.setState({ name: e.target.value.trim().length === 0 ? e.target.value.trim() : e.target.value })}
                   required
                   minLength={3}
+                  maxLength={20}
                 />
               </Col>
             </FormGroup>
@@ -88,6 +89,7 @@ class Signup extends Component {
                   onChange={e => this.setState({ password: e.target.value })}
                   required
                   invalid={passwordInvalid}
+                  maxLength={20}
                   minLength={5}
                 />
                 <FormFeedback>Password Miss match</FormFeedback>
@@ -103,6 +105,7 @@ class Signup extends Component {
                   onChange={e => this.setState({ passwordConfirm: e.target.value })}
                   required
                   minLength={5}
+                  maxLength={20}
                   invalid={passwordInvalid}
                 />
               </Col>
@@ -110,7 +113,7 @@ class Signup extends Component {
           </Form>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" form="signupForm" disabled={disabled}>Signup</Button>{' '}
+          <Button color="info" form="signupForm" disabled={disabled}>Signup</Button>{' '}
           <Button color="secondary" onClick={toggleSignup}>Cancel</Button>
         </ModalFooter>
       </React.Fragment>

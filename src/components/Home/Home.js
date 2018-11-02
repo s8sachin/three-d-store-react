@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
-  Jumbotron, Button, Container, Modal, ModalBody, ModalHeader, ModalFooter,
+  Jumbotron, Container, Modal,
 } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 import './Home.scss';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
@@ -33,6 +34,7 @@ class Home extends Component {
 
   render() {
     const { loginModal, signupModal } = this.state;
+    const loggedIn = localStorage.getItem('token');
     return (
       <div className="custom-container">
         <Container>
@@ -42,13 +44,19 @@ class Home extends Component {
             <hr className="my-2" />
             <p>Do a quick signup and login.</p>
             <div className="lead">
-              <Button color="primary" onClick={this.toggleLogin}>Login</Button>{ ' ' }
-              <Button color="primary" onClick={this.toggleSignup}>Signup</Button>
+              {loggedIn ? <NavLink to="/dashboard"><button type="button" className="appBtn cursor-pointer">Dashboard</button></NavLink>
+                : (
+                  <React.Fragment>
+                    <button type="button" className="appBtn cursor-pointer" onClick={this.toggleLogin}>Login</button>{ ' ' }
+                    <button type="button" className="appBtn cursor-pointer" onClick={this.toggleSignup}>Signup</button>
+                  </React.Fragment>
+                )
+              }
             </div>
           </Jumbotron>
         </Container>
         <Modal isOpen={loginModal || signupModal} toggle={loginModal ? this.toggleLogin : this.toggleSignup}>
-          {loginModal && <Login toggleLogin={this.toggleLogin} toggleSignup={this.toggleSignup}/>}
+          {loginModal && <Login toggleLogin={this.toggleLogin} toggleSignup={this.toggleSignup} />}
           {signupModal && <Signup toggleSignup={this.toggleSignup} toggleLogin={this.toggleLogin} />}
         </Modal>
       </div>

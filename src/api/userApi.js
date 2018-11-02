@@ -14,3 +14,8 @@ export const logIn = params => axios({
   url: `${API_URL}/user/logIn`,
   data: params,
 });
+
+export const getProfile = () => axios({
+  method: 'GET',
+  url: `${API_URL}/user/profile`,
+});

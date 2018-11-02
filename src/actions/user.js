@@ -1,5 +1,5 @@
 import { signUp, logIn } from '../api/userApi';
-import { USER } from './types';
+import { USER, TD_OBJECTS } from './types';
 
 export const signupAction = params => (
   (dispatch) => {
@@ -39,5 +39,14 @@ export const loginAction = params => (
         dispatch({ type: USER, payload: emptyUser });
       }, 3000);
     });
+  }
+);
+
+export const logoutAction = params => (
+  (dispatch) => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('email');
+    dispatch({ type: USER, payload: {} });
+    dispatch({ type: TD_OBJECTS, payload: {} });
   }
 );
