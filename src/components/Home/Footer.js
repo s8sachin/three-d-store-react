@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Row, Col, Container } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
 import scapicLogo from './scapic.png';
 
 class Footer extends Component {
   render() {
+    const fixedBtm = this.props.location.pathname === '/';
     return (
-      <Container fluid className="app-footer">
+      <Container fluid className={`app-footer ${fixedBtm && 'fixed-bottom'}`}>
         <Row>
           <Col xs={12} sm={4} md={4} lg={4}>
             <center>
@@ -32,4 +34,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+export default withRouter(Footer);

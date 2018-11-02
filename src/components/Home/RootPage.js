@@ -5,7 +5,7 @@ import './Home.scss';
 class RootPage extends Component {
   render() {
     return (
-      <div style={{ minHeight: '76vh' }}>
+      <div style={{ minHeight: '80vh' }}>
         <TdObjects />
       </div>
     );
