@@ -20,7 +20,13 @@ export const getTdObjectsAction = (skip, limit) => (
       }
       dispatch({ type: TD_OBJECTS, payload });
     })
-    .catch(e => console.log(e));
+    .catch(({ response }) => {
+      if (response.status > 400) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('email');
+        window.location.href = '/';
+      }
+    });
   }
 );
 
