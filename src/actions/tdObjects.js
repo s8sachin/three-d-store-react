@@ -24,7 +24,7 @@ export const getTdObjectsAction = (skip, limit) => (
       if (response.status > 400) {
         localStorage.removeItem('token');
         localStorage.removeItem('email');
-        window.location.href = '/';
+        window.location.replace(process.env.PUBLIC_URL);
       }
     });
   }
