@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/three-d-store-react/static/css/main.48e15144.chunk.css"
   },
   {
-    "revision": "26fad33d12e6840ba5c92ea2a2a05168",
+    "revision": "70c956111a2890fc7159cb2e118345bf",
     "url": "/three-d-store-react/index.html"
   }
 ];
