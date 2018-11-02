@@ -104,7 +104,7 @@ class TdModelsList extends Component {
               >
                 <div className="model-h ml-auto mr-auto  justify-content-center align-self-center">
                   <img id={`img-${model._id}`} alt={model.name} src={model.thumb} className="img-responsive modelImg ml-auto mr-auto" title={model.name} />
-                  {/* <span className="name">{model.name}</span> */}
+                  {/* <span className="modelName">{model.name}</span> */}
                 </div>
               </div>
             ))}

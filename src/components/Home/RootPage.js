@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import TdObjects from '../TdObjects/TdObjects';
 import './Home.scss';
 
-class Home extends Component {
+class RootPage extends Component {
   render() {
     return (
-      <div style={{ minHeight: '80vh' }}>
+      <div style={{ minHeight: '76vh' }}>
         <TdObjects />
       </div>
     );
   }
 }
 
-export default Home;
+export default RootPage;

@@ -1,6 +1,7 @@
 import { getTdObjects } from '../api/tdObjectsApi';
 import { TD_OBJECTS } from './types';
 
+const removeDuplicates = (myArr, prop) => myArr.filter((obj, pos, arr) => arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos);
 
 export const getTdObjectsAction = (skip, limit) => (
   (dispatch, getState) => {
@@ -11,7 +12,7 @@ export const getTdObjectsAction = (skip, limit) => (
       let payload = {};
       if (tdObjReducer.tdObjects.categories) {
         const { categories } = tdObjReducer.tdObjects;
-        const newArr = categories.concat(data.categories);
+        const newArr = removeDuplicates(categories.concat(data.categories), '_id');
         const newObj = { categories: newArr };
         Object.assign(payload, newObj);
       } else {

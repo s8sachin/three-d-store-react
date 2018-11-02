@@ -20,10 +20,9 @@
 
 .model-h {
   max-width: 85%;
-
+  position: relative;
   :hover {
-    // box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 }
 
@@ -32,8 +31,22 @@
   max-width: inherit;
 }
 
-.name {
-  display: none;
+.modelName {
+  position: absolute;
+  bottom: 5px;
+  left: 40%;
+  visibility: hidden;
+  opacity: 0;
+  justify-content: center;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.model-holder:hover .modelName {
+  visibility: visible;
+  opacity: 1;
+  box-shadow: 0px;
 }
 
 .model-holder {
