@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/three-d-store-react/static/js/runtime~main.56c16f38.js"
   },
   {
-    "revision": "43242aed38dbedea3b85",
-    "url": "/three-d-store-react/static/js/main.43242aed.chunk.js"
+    "revision": "382543dcc5c7a5a73dcd",
+    "url": "/three-d-store-react/static/js/main.382543dc.chunk.js"
   },
   {
     "revision": "0383dbe573ab187162e5",
     "url": "/three-d-store-react/static/js/1.0383dbe5.chunk.js"
   },
   {
-    "revision": "43242aed38dbedea3b85",
+    "revision": "382543dcc5c7a5a73dcd",
     "url": "/three-d-store-react/static/css/main.e53cdc12.chunk.css"
   },
   {
-    "revision": "fdf1b90dff963cddac788d5a33c403c8",
+    "revision": "dafcf5226c5a1d6cc83b823a00a27380",
     "url": "/three-d-store-react/index.html"
   }
 ];
