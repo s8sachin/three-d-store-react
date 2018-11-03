@@ -49,7 +49,7 @@ class Home extends Component {
             {/* <source type="video/webm; codecs=vp8, vorbis" src={backgroundVideoWebm} /> */}
           </video>
         </div>
-        <div className="container d-flex" style={{ height: '65vh' }}>
+        <div className="container d-flex" style={{ height: '65vh', marginBottom: '110px' }}>
           <div className="row justify-content-center align-self-center ml-auto mr-auto">
             <div className="home-content text-center">
               <h1 className="display-3">Hello, there!</h1>
